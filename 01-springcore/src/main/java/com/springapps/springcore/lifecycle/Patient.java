@@ -1,6 +1,9 @@
 package com.springapps.springcore.lifecycle;
 
-public class Patient {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Patient implements InitializingBean, DisposableBean{
 
 	
 	private int id;
@@ -25,4 +28,16 @@ public class Patient {
 	public void bye() {
 		System.out.println("Inside method Bye");
 		}
+
+	@Override
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 }
