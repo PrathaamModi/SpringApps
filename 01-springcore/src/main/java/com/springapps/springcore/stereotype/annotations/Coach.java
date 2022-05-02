@@ -1,12 +1,18 @@
 package com.springapps.springcore.stereotype.annotations;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("supercoach")
+@Scope("prototype")
 public class Coach {
 
-	private int id;
-	private String name;
+	
+	@Value("11")
+	private int id=9;
+	@Value("Prathaam")
+	private String name="John";
 
 	@Override
 	public String toString() {

@@ -9,13 +9,17 @@ public class Test {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/springapps/springcore/stereotype/annotations/config.xml");
 		
 		//get the employee bean from the container
-		Coach coach=(Coach) context.getBean("coach");
+		Coach coach1=(Coach) context.getBean("supercoach");
+		Coach coach2=(Coach) context.getBean("supercoach");
 		
 		
 		
 		
 		//print the bean 		
-		System.out.println(coach);
+		System.out.println(coach1.hashCode());
+		System.out.println(coach1);
+		System.out.println(coach2.hashCode());
+		System.out.println(coach2);
 	}
 
 }
