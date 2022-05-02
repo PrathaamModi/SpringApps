@@ -21,7 +21,14 @@ public class Coach {
 
 	@Value("#{topics}")
 	private List<String> topics;
+	
+	
+	private CoachProfile coachProfile;
 
+	
+	public Coach (CoachProfile coachprofile) {
+		this.coachProfile=coachprofile;
+	}
 	public int getId() {
 		return id;
 	}
@@ -56,7 +63,16 @@ public class Coach {
 
 	@Override
 	public String toString() {
-		return "Coach [id=" + id + ", name=" + name + ", dbuser=" + dbuser + ", topics=" + topics + "]";
+		return "Coach [id=" + id + ", name=" + name + ", dbuser=" + dbuser + ", topics=" + topics + ", coachProfile="
+				+ coachProfile + "]";
+	}
+
+	public CoachProfile getCoachProfile() {
+		return coachProfile;
+	}
+
+	public void setCoachProfile(CoachProfile coachProfile) {
+		this.coachProfile = coachProfile;
 	}
 
 }
