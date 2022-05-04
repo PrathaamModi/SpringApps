@@ -1,5 +1,7 @@
 package com.springapps.springjdbc.employee.app;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,8 +17,22 @@ public class SpringJdbcApp {
 		EmployeeDao employeedao = (EmployeeDao) context.getBean("employeedao");
 
 		// createEmployee(employeedao);
-		//updateEmployee(employeedao);
-		deleteEmployee(employeedao);
+		// updateEmployee(employeedao);
+		// deleteEmployee(employeedao);
+		// readEmployee(employeedao);
+		readEmployees(employeedao);
+	}
+
+	private static void readEmployee(EmployeeDao employeedao) {
+		// TODO Auto-generated method stub
+		Employee emp = employeedao.read(3);
+		System.out.println(emp);
+	}
+
+	private static void readEmployees(EmployeeDao employeedao) {
+		// TODO Auto-generated method stub
+		List<Employee> emps = employeedao.read();
+		System.out.println(emps);
 	}
 
 	private static void createEmployee(EmployeeDao employeedao) {
@@ -27,12 +43,14 @@ public class SpringJdbcApp {
 		int result = employeedao.create(emp);
 		System.out.println("Number of records inserted are: " + result);
 	}
+
 	private static void deleteEmployee(EmployeeDao employeedao) {
 		Employee emp = new Employee();
 		emp.setId(1);
 		int result = employeedao.delete(emp);
 		System.out.println("Number of records deleted are: " + result);
 	}
+
 	private static void updateEmployee(EmployeeDao employeedao) {
 		Employee emp = new Employee();
 		emp.setId(2);
