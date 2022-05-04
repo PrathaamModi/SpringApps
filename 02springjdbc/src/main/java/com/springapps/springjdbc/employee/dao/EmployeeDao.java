@@ -11,8 +11,9 @@ public interface EmployeeDao {
 	int update(Employee employee);
 
 	int delete(Employee employee);
-	
+
 	Employee read(int id);
+
 	List<Employee> read();
 
 	// "update employee set firstname=?,lastname=?where id=?"
